@@ -10,7 +10,10 @@ a_dictionary = {
 8 : 'eight',
 9 : 'nine',
 10 : 'ten'}
-
+a_dictionary[2] 
+result = [a_dictionary[i] for i in a_list if i%2==0]
+result = [i*10 for i in a_list ]
+print(result)
 
 #result = [expression for i in iterable if condition == True]
 '''
@@ -27,34 +30,43 @@ Q3:- Using a list comprehension which iterates over a_list and whose output expr
  print a list composed of the text form of each even number from 2 to 10, e.g.,
 [ 'two', 'four', 'six', 'eight', 'ten' ]
 
+Q4:
+original_list = [2,3.75,0.04,59.354,6,7.7777,8,9]
+remove the float
+
+Q5:
+Find the common numbers in two lists (without using a tuple or set) list_a = [1, 2, 3, 4], list_b = [2, 3, 4, 5]
+
+Q6:- Produce a list of tuples consisting of only the matching numbers in these lists list_a = [1, 2, 3,4,5,6,7,8,9],
+ list_b = [2, 7, 1, 12].  Result would look like [(4,4), (12,12)]
 '''
-list1=range(1,50)
-result=[i for i in list1 if i%2==0]
-print(result)
+# list_a = [1, 2, 3, 4]
+# list_b = [2, 3, 4, 5]
+list_a = [1, 2, 3,4,5,6,7,8,9]
+list_b = [2, 7, 1, 12]
+op_lst = [(i,i) for i in list_a if i in list_b]
+op_lst = [i for i in list_a if i in list_b]
 
-list2=range(1,50)
-result2=[i for i in list2 if i%2!=0]
-print(result2)
+# list_a = [1, 2, 3,4,5,6,7,8,9]
 
-
-
-
-
+# list_b = [2, 7, 1, 12]
 
 
+# list1=range(1,50)
+# result=[i for i in list1 if i%2==0]
+# print(result)
+
+# list2=range(1,50)
+# result2=[i for i in list2 if i%2!=0]
+# print(result2)
+
+# original_list = [2,6,8,9]
+# int_list=[int(i) for i in original_list ]
+# print(int_list)
 
 
-
-
-
-
-
-
-
-
-
-
-
+# res_lst=[d for d in original_list if type(d) == int]
+# print(res_lst)
 
 # result = [expression for i in iterable if condition == True]
 
@@ -89,3 +101,29 @@ print(f"Odd {odd}")
 def op_lst(lst):
     op = [i**2 for i in lst if i%5==0]
     return op
+
+
+'''
+Write a function named odd_or_zero which takes one parameter, a number,
+ and returns that number if it is odd or returns 0 if the number is even.
+  Then using a list comprehension which iterates over a_list and calls your odd or zero function for each value, 
+  print a list like the following:
+
+[ 1, 0, 3, 0, 5, 0, 7, 0, 9, 0 ]
+'''
+a_list = list(range(1, 11))
+
+result = [a_dictionary[i] for i in a_list if i%2==0]
+print(result)
+
+
+a_list = list(range(1, 11))
+
+def odd_even(num):
+        if num%2==0:
+            return("0")
+        else:
+            return(num)
+
+result = [odd_even(i) for i in a_list]
+print(result)
